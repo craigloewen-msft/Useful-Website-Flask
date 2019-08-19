@@ -1,5 +1,8 @@
-import urllib.request
+from app import app
+import pytest
 
-def test_localhost_loads():
-    urlOpened = urllib.request.urlopen("http://localhost:5000/")
-    assert urlOpened
+def test_home():
+    test_client = app.test_client()
+    response = test_client.get('/')
+    print(response.data)
+    assert b'error' not in response.data

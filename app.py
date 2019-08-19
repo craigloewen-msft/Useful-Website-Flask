@@ -1,5 +1,6 @@
 from flask import Flask, render_template, send_from_directory
 import os
+import pytest
 
 app = Flask(__name__)
 
@@ -10,7 +11,8 @@ def favicon():
 
 @app.route("/")
 def home():
+    garbage = fail
     return render_template("home.html")
-    
+
 if __name__ == "__main__":
     app.run(debug=True)
