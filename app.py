@@ -11,7 +11,6 @@ def favicon():
 
 @app.route("/")
 def home():
-    garbage = fail
     return render_template("home.html")
 
 if __name__ == "__main__":
